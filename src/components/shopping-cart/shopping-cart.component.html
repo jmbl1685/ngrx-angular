@@ -1,0 +1,22 @@
+<div>
+    <h1 (click)="vertodo()">Shopping Cart</h1>
+    <h2><b>TOTAL: {{shoppingCart.Total | currency}} </b></h2>
+    <div>
+        <table class="table is-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Units</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of shoppingCart.ProductList">
+                    <td>{{product.Name}}</td>
+                    <td>{{product.Units}}</td>
+                    <td>{{product.Price * product.Units | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

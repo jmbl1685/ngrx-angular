@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="section">
+  
+      <div class="row columns is-multiline">
+  
+        <div class="column is-one-quarter" *ngFor="let product of products; let i = index">
+  
+          <div class="card hvr-bob">
+  
+            <div class="card-image">
+              <figure class="image is-3by3">
+                <img [src]="product.Images[0]" >
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <h3>
+                    <b>{{product.Name}}</b>
+                  </h3>
+                </div>
+              </div>
+  
+              <div class="content">
+                {{product.Description}}
+                <br>
+                <p>Price: {{product.Price | currency}}</p>
+                <p>Units: {{product.Units}}</p>
+  
+                <span class="button is-success is-rounded" (click)="addToCart(product,i)" >
+                  <strong>Add to car</strong>
+                </span>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
