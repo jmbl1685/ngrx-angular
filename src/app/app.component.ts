@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product.model';
+import { Store } from '@ngrx/store';
+import { AppStore } from './app-ngrx/reducers/app.reduce';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() {
+  public productList: Array<Product> = [];
+
+  constructor(
+    private store: Store<AppStore>
+  ) {
 
   }
 
   ngOnInit() {
-
+    this.store.subscribe(res => console.log(res))
   }
 
 }

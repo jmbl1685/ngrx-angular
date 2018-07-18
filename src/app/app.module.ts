@@ -7,13 +7,18 @@ import { ShoppingCartComponent } from '../components/shopping-cart/shopping-cart
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { ProductTypeComponent } from '../components/product-type/product-type.component';
 
+
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
-import { AppReducer } from './app-ngrx/app.reducers';
+import { AppReducer } from './app-ngrx/reducers/app.reducers';
 import { environment } from '../environments/environment';
+import { AppService } from './app-ngrx/services/app.services';
+import { HttpClientModule } from '@angular/common/http';
+import { AppEffects } from './app-ngrx/effects/app.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 const store = {
-  product: AppReducer
+  store: AppReducer
 }
 
 @NgModule({
@@ -25,13 +30,17 @@ const store = {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     [StoreModule.forRoot(store)],
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
-    })
+    }),
+    EffectsModule.forRoot([AppEffects])
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
