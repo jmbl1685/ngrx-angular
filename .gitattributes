@@ -1,0 +1,4 @@
+$ cat .gitattributes
+*.* linguist-language=javascript
+Angular/* linguist-vendored
+React/* linguist-vendored
