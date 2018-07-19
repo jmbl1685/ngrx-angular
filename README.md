@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Used Packages
 
-* [@ngrx/store](./docs/store/README.md) - RxJS powered state management for Angular applications, inspired by Redux
-* [@ngrx/effects](./docs/effects/README.md) - Side Effect model for @ngrx/store to model event sources as actions.
-* [@ngrx/store-devtools](./docs/store-devtools/README.md) - Store instrumentation that enables a
+* [@ngrx/store](https://github.com/ngrx/platform/blob/master/docs/store/README.md) - RxJS powered state management for Angular applications, inspired by Redux
+* [@ngrx/effects](https://github.com/ngrx/platform/blob/master/docs/effects/README.md) - Side Effect model for @ngrx/store to model event sources as actions.
+* [@ngrx/store-devtools](https://github.com/ngrx/platform/blob/master/docs/store-devtools/README.md) - Store instrumentation that enables a
 
 ### Ngrx schemes
 <p align="center">
